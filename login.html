@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuChei - Entrar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="login">
+
+<nav class="cabecalho-site">
+  <div class="pagina">
+    <div class="header-row">
+      <a href="index.html" class="linha-info">
+        <div class="marca-logo"><span class="marca-logo__icone">🐾</span></div>
+      </a>
+      <div class="nav-desktop">
+        <a href="index.html" data-nav="inicio" class="link-nav">Início</a>
+        <a href="perdidos.html" data-nav="perdidos" class="link-nav">Perdidos</a>
+        <a href="encontrados.html" data-nav="encontrados" class="link-nav">Encontrados</a>
+        <a href="recompensas.html" data-nav="recompensas" class="link-nav">Recompensas</a>
+        <a href="sobre.html" data-nav="sobre" class="link-nav">Sobre</a>
+        <a href="contato.html" data-nav="contato" class="link-nav">Contato</a>
+      </div>
+      <div class="acoes-cabecalho">
+        <div class="grupo-menu">
+          <button data-toggle="search" class="botao-icone"><i data-lucide="search" class="icone-sm"></i></button>
+          <div data-menu="search" class="painel-menu painel-menu--busca hidden">
+            <form id="nav-search-form">
+              <div class="relative"><i data-lucide="search" class="icone-campo"></i><input id="nav-search-input" type="text" placeholder="Buscar pets, raças, cidades..." class="campo-busca"></div>
+              <div class="texto-ajuda">Pressione Enter para buscar em Perdidos</div>
+              <div class="links-rapidos"><a href="perdidos.html" class="link-rapido">Ver todos os perdidos</a><a href="encontrados.html" class="link-rapido">Ver todos os encontrados</a></div>
+            </form>
+          </div>
+        </div>
+        <button id="theme-toggle" class="botao-icone" title="Alternar tema"><i data-theme-icon data-lucide="moon" class="icone-sm"></i></button>
+        <div class="grupo-menu">
+          <button data-toggle="notif" class="botao-icone botao-icone--relativo"><i data-lucide="bell" class="icone-sm"></i><span id="badge-notificacao" class="badge-notificacao"></span></button>
+          <div data-menu="notif" class="painel-menu painel-menu--lista hidden">
+            <div class="cabecalho-menu"><h3 class="titulo-secao">Notificações</h3><button id="read-all" class="link-texto">Marcar todas como lidas</button></div>
+            <div id="notif-list" class="lista-rolavel"></div>
+          </div>
+        </div>
+        <div class="grupo-menu">
+          <button data-toggle="location" class="botao-icone" title="Localização"><i data-lucide="map-pin" class="icone-sm"></i></button>
+          <div data-menu="location" class="painel-menu painel-menu--localizacao hidden">
+            <h3 class="titulo-secao titulo-secao--espacada">Sua localização</h3>
+            <div class="chip-localizacao"><i data-lucide="map-pin" class="w-4 h-4 text-primary shrink-0"></i><span id="user-location">São Paulo, SP</span></div>
+            <input id="location-input" type="text" placeholder="Alterar cidade..." class="campo-texto">
+            <p class="text-xs text-muted-foreground mt-2">Pressione Enter para atualizar</p>
+          </div>
+        </div>
+        <div class="grupo-menu">
+          <button data-toggle="user" class="toggle-perfil" aria-label="Abrir menu do perfil" aria-expanded="false">
+            <div class="toggle-perfil__avatar"><span id="user-avatar" class="text-sm">👤</span></div>
+            <i data-lucide="chevron-down" class="toggle-perfil__seta"></i>
+          </button>
+          <div data-menu="user" class="painel-menu painel-menu--usuario hidden">
+            <div class="secao-menu secao-menu--borda"><p id="user-name" class="titulo-secao">Visitante</p><p id="user-email" class="nota-suave">Entre ou crie sua conta</p></div>
+            <div class="lista-menu"><a href="login.html" class="link-menu">Entrar</a><a href="registro.html" class="link-menu">Criar conta</a></div>
+            <div class="secao-menu secao-menu--topo hidden"><button type="button" id="logout-button" class="link-menu link-menu--perigo link-menu--completo">Sair</button></div>
+          </div>
+        </div>
+        <button data-toggle-mobile class="botao-menu-mobile"><i data-lucide="menu" class="icone-sm"></i></button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="nav-mobile hidden">
+      <a href="index.html" data-nav="inicio" class="link-nav-mobile">Início</a>
+      <a href="perdidos.html" data-nav="perdidos" class="link-nav-mobile">Perdidos</a>
+      <a href="encontrados.html" data-nav="encontrados" class="link-nav-mobile">Encontrados</a>
+      <a href="recompensas.html" data-nav="recompensas" class="link-nav-mobile">Recompensas</a>
+      <a href="sobre.html" data-nav="sobre" class="link-nav-mobile">Sobre</a>
+      <a href="contato.html" data-nav="contato" class="link-nav-mobile">Contato</a>
+      <a href="login.html" class="link-nav-mobile">Entrar</a>
+      <a href="registro.html" class="link-nav-mobile">Criar conta</a>
+    </div>
+  </div>
+</nav>
+
+<main class="auth-area">
+  <div class="auth-container">
+    <div class="auth-card auth-grid">
+      <aside class="auth-side">
+        <span class="configuracoes-selo">Acesse sua conta</span>
+        <h1 class="auth-side__titulo">Entre para acompanhar seus pets e publicações</h1>
+        <p class="auth-side__texto">No AuChei, você pode publicar casos, ajustar suas preferências e acompanhar tudo com rapidez, sem perder o visual acolhedor da plataforma.</p>
+        <div class="auth-side__lista">
+          <div class="auth-side__item"><i data-lucide="shield-check" class="icone-sm"></i><span>Seus dados ficam salvos no próprio navegador para esta demonstração.</span></div>
+          <div class="auth-side__item"><i data-lucide="paw-print" class="icone-sm"></i><span>Gerencie alertas de pets perdidos e encontrados de forma simples.</span></div>
+          <div class="auth-side__item"><i data-lucide="sun-moon" class="icone-sm"></i><span>Seu tema e suas preferências continuam sincronizados entre as páginas.</span></div>
+        </div>
+      </aside>
+      <section class="auth-form-wrap">
+        <div class="auth-topo">
+          <div>
+            <h1 class="auth-topo__titulo">Entrar</h1>
+            <p class="auth-topo__texto">Use sua conta para acessar seu perfil, suas configurações e suas publicações.</p>
+          </div>
+        </div>
+        <div class="auth-aviso"><strong>Demonstração pronta:</strong> você pode entrar com <strong>maria@email.com</strong> e senha <strong>123456</strong>.</div>
+        <form id="login-form" class="auth-form" autocomplete="on">
+          <label class="auth-campo"><span class="auth-rotulo">E-mail</span><input class="auth-entrada" type="email" name="email" placeholder="seuemail@exemplo.com" required></label>
+          <label class="auth-campo"><span class="auth-rotulo">Senha</span><input class="auth-entrada" type="password" name="password" placeholder="Digite sua senha" required></label>
+          <div class="auth-linha"><label class="text-sm text-muted-foreground"><input type="checkbox" checked> Lembrar neste navegador</label><a href="registro.html" class="auth-link">Criar conta</a></div>
+          <button type="submit" class="auth-botao">Entrar agora</button>
+        </form>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="rodape-site rodape-site--espacado">
+  <div class="pagina">
+    <div class="rodape-grade">
+      <div>
+        <div class="rodape-marca"><div class="marca-logo"><span class="marca-logo__icone">🐾</span></div><span class="rodape-logo-texto">AuChei</span></div>
+        <p class="rodape-texto">Reunindo pets e famílias desde 2024. Cada animal merece voltar para casa.</p>
+      </div>
+      <div><h4 class="rodape-subtitulo">Plataforma</h4><ul class="rodape-lista"><li><a href="perdidos.html" class="rodape-link">Perdidos</a></li><li><a href="encontrados.html" class="rodape-link">Encontrados</a></li><li><a href="recompensas.html" class="rodape-link">Recompensas</a></li></ul></div>
+      <div><h4 class="rodape-subtitulo">Conta</h4><ul class="rodape-lista"><li><a href="login.html" class="rodape-link">Entrar</a></li><li><a href="registro.html" class="rodape-link">Criar conta</a></li><li><a href="configuracoes.html" class="rodape-link">Configurações</a></li></ul></div>
+      <div><h4 class="rodape-subtitulo">Redes sociais</h4><div class="rodape-redes"><a href="#" class="rodape-rede-link"><i data-lucide="instagram" class="icone-rodape"></i></a><a href="#" class="rodape-rede-link"><i data-lucide="facebook" class="icone-rodape"></i></a><a href="#" class="rodape-rede-link"><i data-lucide="twitter" class="icone-rodape"></i></a></div></div>
+    </div>
+    <div class="rodape-direitos">© 2026 AuChei. Feito para ajudar pets a voltarem para casa.</div>
+  </div>
+</footer>
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

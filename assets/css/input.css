@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 50% 97%;
+    --foreground: 220 20% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 20%;
+    --primary: 14 76% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 40% 95%;
+    --secondary-foreground: 220 20% 20%;
+    --muted: 30 20% 93%;
+    --muted-foreground: 220 10% 50%;
+    --accent: 14 76% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 14 76% 58%;
+    --radius: 0.75rem;
+    --olive: 75 30% 40%;
+    --olive-foreground: 0 0% 100%;
+    --success: 150 50% 45%;
+    --success-foreground: 0 0% 100%;
+    --coral-light: 14 90% 95%;
+    --navy: 220 30% 25%;
+  }
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 30 20% 95%;
+    --card: 220 20% 13%;
+    --card-foreground: 30 20% 95%;
+    --popover: 220 20% 13%;
+    --popover-foreground: 30 20% 95%;
+    --primary: 14 76% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 30 20% 95%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 14 76% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 14 76% 58%;
+  }
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+@layer utilities {
+  .bg-background { background-color: hsl(var(--background)); }
+  .text-foreground { color: hsl(var(--foreground)); }
+  .bg-card { background-color: hsl(var(--card)); }
+  .text-card { color: hsl(var(--card)); }
+  .text-card\/60 { color: hsl(var(--card) / 0.6); }
+  .text-card\/40 { color: hsl(var(--card) / 0.4); }
+  .bg-primary { background-color: hsl(var(--primary)); }
+  .text-primary { color: hsl(var(--primary)); }
+  .bg-primary\/10 { background-color: hsl(var(--primary) / 0.1); }
+  .bg-primary\/20 { background-color: hsl(var(--primary) / 0.2); }
+  .text-primary-foreground { color: hsl(var(--primary-foreground)); }
+  .bg-secondary { background-color: hsl(var(--secondary)); }
+  .bg-secondary\/50 { background-color: hsl(var(--secondary) / 0.5); }
+  .text-secondary-foreground { color: hsl(var(--secondary-foreground)); }
+  .bg-muted { background-color: hsl(var(--muted)); }
+  .text-muted-foreground { color: hsl(var(--muted-foreground)); }
+  .text-muted-foreground\/60 { color: hsl(var(--muted-foreground) / 0.6); }
+  .bg-success { background-color: hsl(var(--success)); }
+  .bg-success\/10 { background-color: hsl(var(--success) / 0.1); }
+  .text-success { color: hsl(var(--success)); }
+  .text-success-foreground { color: hsl(var(--success-foreground)); }
+  .bg-olive { background-color: hsl(var(--olive)); }
+  .bg-olive\/10 { background-color: hsl(var(--olive) / 0.1); }
+  .text-olive { color: hsl(var(--olive)); }
+  .text-olive-foreground { color: hsl(var(--olive-foreground)); }
+  .bg-coral-light { background-color: hsl(var(--coral-light)); }
+  .bg-navy { background-color: hsl(var(--navy)); }
+  .text-destructive { color: hsl(var(--destructive)); }
+  .bg-destructive { background-color: hsl(var(--destructive)); }
+  .bg-destructive\/10 { background-color: hsl(var(--destructive) / 0.1); }
+  .text-destructive-foreground { color: hsl(var(--destructive-foreground)); }
+  .border-border { border-color: hsl(var(--border)); }
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .paw-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='none' stroke='%23e8d5c4' stroke-width='1.5' opacity='0.3'%3E%3Cpath d='M12 10c-1.5 2-3 3.5-3 5.5a3 3 0 1 0 6 0c0-2-1.5-3.5-3-5.5z'/%3E%3Ccircle cx='7' cy='8' r='1.5'/%3E%3Ccircle cx='17' cy='8' r='1.5'/%3E%3Ccircle cx='9' cy='5' r='1.5'/%3E%3Ccircle cx='15' cy='5' r='1.5'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+}

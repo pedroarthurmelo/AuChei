@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuChei</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="inicio">
+  
+<nav class="cabecalho-site">
+  <div class="pagina">
+    <div class="header-row">
+      <a href="index.html" class="linha-info">
+        <div class="marca-logo">
+          <span class="marca-logo__icone">🐾</span>
+        </div>
+      </a>
+
+      <div class="nav-desktop">
+        <a href="index.html" data-nav="inicio" class="link-nav">Início</a>
+        <a href="perdidos.html" data-nav="perdidos" class="link-nav">Perdidos</a>
+        <a href="encontrados.html" data-nav="encontrados" class="link-nav">Encontrados</a>
+        <a href="recompensas.html" data-nav="recompensas" class="link-nav">Recompensas</a>
+        <a href="sobre.html" data-nav="sobre" class="link-nav">Sobre</a>
+        <a href="contato.html" data-nav="contato" class="link-nav">Contato</a>
+      </div>
+
+      <div class="acoes-cabecalho">
+        <div class="grupo-menu">
+          <button data-toggle="search" class="botao-icone">
+            <i data-lucide="search" class="icone-sm"></i>
+          </button>
+          <div data-menu="search" class="painel-menu painel-menu--busca hidden">
+            <form id="nav-search-form">
+              <div class="relative">
+                <i data-lucide="search" class="icone-campo"></i>
+                <input id="nav-search-input" type="text" placeholder="Buscar pets, raças, cidades..." class="campo-busca">
+              </div>
+              <div class="texto-ajuda">Pressione Enter para buscar em Perdidos</div>
+              <div class="links-rapidos">
+                <a href="perdidos.html" class="link-rapido">Ver todos os perdidos</a>
+                <a href="encontrados.html" class="link-rapido">Ver todos os encontrados</a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <button id="theme-toggle" class="botao-icone" title="Alternar tema">
+          <i data-theme-icon data-lucide="moon" class="icone-sm"></i>
+        </button>
+
+        <div class="grupo-menu">
+          <button data-toggle="notif" class="botao-icone botao-icone--relativo">
+            <i data-lucide="bell" class="icone-sm"></i>
+            <span id="badge-notificacao" class="badge-notificacao"></span>
+          </button>
+          <div data-menu="notif" class="painel-menu painel-menu--lista hidden">
+            <div class="cabecalho-menu">
+              <h3 class="titulo-secao">Notificações</h3>
+              <button id="read-all" class="link-texto">Marcar todas como lidas</button>
+            </div>
+            <div id="notif-list" class="lista-rolavel"></div>
+          </div>
+        </div>
+
+        <div class="grupo-menu">
+          <button data-toggle="location" class="botao-icone" title="Localização">
+            <i data-lucide="map-pin" class="icone-sm"></i>
+          </button>
+          <div data-menu="location" class="painel-menu painel-menu--localizacao hidden">
+            <h3 class="titulo-secao titulo-secao--espacada">Sua localização</h3>
+            <div class="chip-localizacao">
+              <i data-lucide="map-pin" class="w-4 h-4 text-primary shrink-0"></i>
+              <span id="user-location">São Paulo, SP</span>
+            </div>
+            <input id="location-input" type="text" placeholder="Alterar cidade..." class="campo-texto">
+            <p class="text-xs text-muted-foreground mt-2">Pressione Enter para atualizar</p>
+          </div>
+        </div>
+
+        <div class="grupo-menu">
+          <button data-toggle="user" class="toggle-perfil" aria-label="Abrir menu do perfil" aria-expanded="false">
+            <div class="toggle-perfil__avatar">
+              <span id="user-avatar" class="text-sm">👤</span>
+            </div>
+            <i data-lucide="chevron-down" class="toggle-perfil__seta"></i>
+          </button>
+          <div data-menu="user" class="painel-menu painel-menu--usuario hidden">
+            <div class="secao-menu secao-menu--borda">
+              <p id="user-name" class="titulo-secao">Maria Silva</p>
+              <p id="user-email" class="nota-suave">maria@email.com</p>
+            </div>
+            <div class="lista-menu">
+              <a href="perfil.html" class="link-menu">Meu perfil</a>
+              <a href="perdidos.html" class="link-menu">Meus pets</a>
+              <a href="admin.html" class="link-menu">Painel Admin</a>
+              <a href="configuracoes.html" class="link-menu">Configurações</a>
+            </div>
+            <div class="secao-menu secao-menu--topo">
+              <button type="button" id="logout-button" class="link-menu link-menu--perigo link-menu--completo">Sair</button>
+            </div>
+          </div>
+        </div>
+
+        <button data-toggle-mobile class="botao-menu-mobile">
+          <i data-lucide="menu" class="icone-sm"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="nav-mobile hidden">
+      <a href="index.html" data-nav="inicio" class="link-nav-mobile">Início</a>
+      <a href="perdidos.html" data-nav="perdidos" class="link-nav-mobile">Perdidos</a>
+      <a href="encontrados.html" data-nav="encontrados" class="link-nav-mobile">Encontrados</a>
+      <a href="recompensas.html" data-nav="recompensas" class="link-nav-mobile">Recompensas</a>
+      <a href="sobre.html" data-nav="sobre" class="link-nav-mobile">Sobre</a>
+      <a href="contato.html" data-nav="contato" class="link-nav-mobile">Contato</a>
+    </div>
+  </div>
+</nav>
+
+  <main>
+    
+<section class="relative overflow-hidden">
+  <div class="paw-pattern absolute inset-0 opacity-30"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="relative z-10">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-coral-light text-primary text-sm font-medium mb-6">🐾 Reunindo Famílias desde 2024</div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground">Encontre seu <em class="text-primary not-italic">melhor amigo</em><br>de volta para casa</h1>
+        <p class="mt-6 text-lg text-muted-foreground max-w-lg">O AuChei conecta tutores de animais perdidos com pessoas que encontraram pets. Juntos, reunimos famílias e damos esperança a quem mais precisa.</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="novo.html?type=lost" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"><i data-lucide="search" class="icone-sm"></i> Reportar Perdido</a>
+          <a href="novo.html?type=found" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-primary text-primary font-semibold hover:bg-coral-light transition-colors"><i data-lucide="heart" class="icone-sm"></i> Reportar Encontrado</a>
+        </div>
+        <div class="mt-10 flex gap-8">
+          <div><div class="text-2xl font-bold text-foreground">4.200+</div><div class="texto-suave">Pets reunidos</div></div>
+          <div><div class="text-2xl font-bold text-foreground">94%</div><div class="texto-suave">Taxa de sucesso</div></div>
+          <div><div class="text-2xl font-bold text-foreground">12.5K+</div><div class="texto-suave">Usuários ativos</div></div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="rounded-2xl overflow-hidden shadow-2xl">
+          <img src="assets/img/hero-dog.jpg" alt="Pet feliz esperando ser encontrado" class="w-full h-auto object-cover">
+        </div>
+        <div class="absolute bottom-4 left-4 bg-card rounded-xl shadow-lg px-4 py-3 flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-success/20 flex items-center justify-center"><i data-lucide="check-circle" class="w-4 h-4 text-success"></i></div>
+          <div><p class="titulo-secao">Thor foi encontrado!</p><p class="nota-suave">há 2 dias · Florianópolis</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="secao secao--media">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-6">
+    <div class="cartao-info">
+      <div class="text-5xl font-bold text-primary">94%</div>
+      <h3 class="text-xl font-bold text-foreground mt-2">Taxa de Sucesso</h3>
+      <p class="mt-2 text-muted-foreground">em reunir pets com suas famílias. Nossa comunidade faz a diferença.</p>
+      <p class="text-sm text-primary mt-4">Juntos fazemos a diferença</p>
+    </div>
+    <div class="cartao-info">
+      <div class="text-5xl font-bold text-foreground">12.5K+</div>
+      <h3 class="text-xl font-bold text-foreground mt-2">Usuários Ativos</h3>
+      <p class="mt-2 text-muted-foreground">Nossa comunidade cresce todos os dias, com milhares de pessoas ajudando a encontrar pets perdidos e reunir famílias em todo o Brasil.</p>
+      <p class="text-sm text-primary mt-4">+200 novos usuários por semana</p>
+    </div>
+  </div>
+</section>
+
+<section class="secao secao--media">
+  <div class="pagina">
+    <div class="cabecalho-secao">
+      <h2 class="cabecalho-secao__titulo">Como o AuChei ajuda você</h2>
+      <p class="cabecalho-secao__texto">Tudo que você precisa para encontrar um pet perdido ou ajudar um animal a voltar para casa.</p>
+    </div>
+    <div class="grade-cartoes">
+      <div class="cartao-recurso"><div class="cartao-recurso__icone"><i data-lucide="search" class="w-5 h-5"></i></div><h3 class="cartao-recurso__titulo">Reportar Perdido</h3><p class="cartao-recurso__texto">Publique rapidamente um alerta com foto, localização e descrição do seu pet. Nossa comunidade ajuda a divulgar e encontrar.</p></div>
+      <div class="cartao-recurso"><div class="cartao-recurso__icone"><i data-lucide="heart" class="w-5 h-5"></i></div><h3 class="cartao-recurso__titulo">Reportar Encontrado</h3><p class="cartao-recurso__texto">Encontrou um animal perdido? Registre aqui e ajude a reunir esse pet com sua família o mais rápido possível.</p></div>
+      <div class="cartao-recurso"><div class="cartao-recurso__icone"><i data-lucide="badge-dollar-sign" class="w-5 h-5"></i></div><h3 class="cartao-recurso__titulo">Oferecer Recompensa</h3><p class="cartao-recurso__texto">Aumente as chances de encontrar seu pet oferecendo uma recompensa. Mais pessoas vão se mobilizar para ajudar.</p></div>
+      <div class="cartao-recurso"><div class="cartao-recurso__icone"><i data-lucide="message-circle" class="w-5 h-5"></i></div><h3 class="cartao-recurso__titulo">Chat Seguro</h3><p class="cartao-recurso__texto">Converse diretamente com quem encontrou ou reportou um animal. Comunicação segura dentro da plataforma.</p></div>
+      <div class="cartao-recurso"><div class="cartao-recurso__icone"><i data-lucide="map" class="w-5 h-5"></i></div><h3 class="cartao-recurso__titulo">Mapa Interativo</h3><p class="cartao-recurso__texto">Visualize animais perdidos e encontrados em sua região. Encontre casos próximos a você com facilidade.</p></div>
+      <div class="cartao-recurso"><div class="cartao-recurso__icone"><i data-lucide="users" class="w-5 h-5"></i></div><h3 class="cartao-recurso__titulo">Comunidade Ativa</h3><p class="cartao-recurso__texto">Faça parte de uma rede de tutores e voluntários que se dedicam a reunir pets com suas famílias todos os dias.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="secao secao--media">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+    <div><img src="assets/img/reunion.jpg" alt="Reencontro entre pet e família" class="rounded-3xl shadow-2xl w-full"></div>
+    <div>
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary text-sm font-medium mb-5">💛 Histórias reais, finais felizes</div>
+      <h2 class="cabecalho-secao__titulo">Cada reencontro importa</h2>
+      <p class="mt-4 text-muted-foreground leading-7">Nossa plataforma já ajudou milhares de famílias a reencontrarem seus pets. Com alertas rápidos, buscas por região e uma comunidade ativa, aumentamos as chances de um retorno seguro.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+        <div class="cartao-estatistica"><div class="text-2xl font-bold text-foreground">4.200+</div><div class="cartao-estatistica__rotulo">Pets Reunidos</div></div>
+        <div class="cartao-estatistica"><div class="text-2xl font-bold text-foreground">380+</div><div class="cartao-estatistica__rotulo">Cidades</div></div>
+        <div class="cartao-estatistica"><div class="text-2xl font-bold text-foreground">8.500+</div><div class="cartao-estatistica__rotulo">Posts Ativos</div></div>
+        <div class="cartao-estatistica"><div class="text-2xl font-bold text-foreground">24h</div><div class="cartao-estatistica__rotulo">Suporte</div></div>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="perdidos.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold">Ver pets perdidos</a>
+        <a href="novo.html?type=found" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-primary text-primary font-semibold hover:bg-coral-light">Ajudar agora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+  
+<footer class="rodape-site rodape-site--espacado">
+  <div class="pagina">
+    <div class="rodape-grade">
+      <div>
+        <div class="rodape-marca">
+          <div class="marca-logo">
+            <span class="marca-logo__icone">🐾</span>
+          </div>
+          <span class="rodape-logo-texto">AuChei</span>
+        </div>
+        <p class="rodape-texto">Reunindo pets e famílias desde 2024. Cada animal merece voltar para casa.</p>
+      </div>
+      <div>
+        <h4 class="rodape-subtitulo">Plataforma</h4>
+        <ul class="rodape-lista">
+          <li><a href="perdidos.html" class="rodape-link">Perdidos</a></li>
+          <li><a href="encontrados.html" class="rodape-link">Encontrados</a></li>
+          <li><a href="recompensas.html" class="rodape-link">Recompensas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="rodape-subtitulo">Sobre</h4>
+        <ul class="rodape-lista">
+          <li><a href="sobre.html" class="rodape-link">Nossa história</a></li>
+          <li><a href="contato.html" class="rodape-link">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="rodape-subtitulo">Redes sociais</h4>
+        <div class="rodape-redes">
+          <a href="#" class="rodape-rede-link"><i data-lucide="instagram" class="icone-rodape"></i></a>
+          <a href="#" class="rodape-rede-link"><i data-lucide="facebook" class="icone-rodape"></i></a>
+          <a href="#" class="rodape-rede-link"><i data-lucide="twitter" class="icone-rodape"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="rodape-direitos">© 2024 AuChei. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+  <div id="toast-box" class="area-toast"></div>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

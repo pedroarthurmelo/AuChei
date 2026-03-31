@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuChei - Nova publicação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="novo">
+  
+<nav class="cabecalho-site">
+  <div class="pagina">
+    <div class="header-row">
+      <a href="index.html" class="linha-info">
+        <div class="marca-logo">
+          <span class="marca-logo__icone">🐾</span>
+        </div>
+      </a>
+
+      <div class="nav-desktop">
+        <a href="index.html" data-nav="inicio" class="link-nav">Início</a>
+        <a href="perdidos.html" data-nav="perdidos" class="link-nav">Perdidos</a>
+        <a href="encontrados.html" data-nav="encontrados" class="link-nav">Encontrados</a>
+        <a href="recompensas.html" data-nav="recompensas" class="link-nav">Recompensas</a>
+        <a href="sobre.html" data-nav="sobre" class="link-nav">Sobre</a>
+        <a href="contato.html" data-nav="contato" class="link-nav">Contato</a>
+      </div>
+
+      <div class="acoes-cabecalho">
+        <div class="grupo-menu">
+          <button data-toggle="search" class="botao-icone">
+            <i data-lucide="search" class="icone-sm"></i>
+          </button>
+          <div data-menu="search" class="painel-menu painel-menu--busca hidden">
+            <form id="nav-search-form">
+              <div class="relative">
+                <i data-lucide="search" class="icone-campo"></i>
+                <input id="nav-search-input" type="text" placeholder="Buscar pets, raças, cidades..." class="campo-busca">
+              </div>
+              <div class="texto-ajuda">Pressione Enter para buscar em Perdidos</div>
+              <div class="links-rapidos">
+                <a href="perdidos.html" class="link-rapido">Ver todos os perdidos</a>
+                <a href="encontrados.html" class="link-rapido">Ver todos os encontrados</a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <button id="theme-toggle" class="botao-icone" title="Alternar tema">
+          <i data-theme-icon data-lucide="moon" class="icone-sm"></i>
+        </button>
+
+        <div class="grupo-menu">
+          <button data-toggle="notif" class="botao-icone botao-icone--relativo">
+            <i data-lucide="bell" class="icone-sm"></i>
+            <span id="badge-notificacao" class="badge-notificacao"></span>
+          </button>
+          <div data-menu="notif" class="painel-menu painel-menu--lista hidden">
+            <div class="cabecalho-menu">
+              <h3 class="titulo-secao">Notificações</h3>
+              <button id="read-all" class="link-texto">Marcar todas como lidas</button>
+            </div>
+            <div id="notif-list" class="lista-rolavel"></div>
+          </div>
+        </div>
+
+        <div class="grupo-menu">
+          <button data-toggle="location" class="botao-icone" title="Localização">
+            <i data-lucide="map-pin" class="icone-sm"></i>
+          </button>
+          <div data-menu="location" class="painel-menu painel-menu--localizacao hidden">
+            <h3 class="titulo-secao titulo-secao--espacada">Sua localização</h3>
+            <div class="chip-localizacao">
+              <i data-lucide="map-pin" class="w-4 h-4 text-primary shrink-0"></i>
+              <span id="user-location">São Paulo, SP</span>
+            </div>
+            <input id="location-input" type="text" placeholder="Alterar cidade..." class="campo-texto">
+            <p class="text-xs text-muted-foreground mt-2">Pressione Enter para atualizar</p>
+          </div>
+        </div>
+
+        <div class="grupo-menu">
+          <button data-toggle="user" class="toggle-perfil" aria-label="Abrir menu do perfil" aria-expanded="false">
+            <div class="toggle-perfil__avatar">
+              <span id="user-avatar" class="text-sm">👤</span>
+            </div>
+            <i data-lucide="chevron-down" class="toggle-perfil__seta"></i>
+          </button>
+          <div data-menu="user" class="painel-menu painel-menu--usuario hidden">
+            <div class="secao-menu secao-menu--borda">
+              <p id="user-name" class="titulo-secao">Maria Silva</p>
+              <p id="user-email" class="nota-suave">maria@email.com</p>
+            </div>
+            <div class="lista-menu">
+              <a href="perfil.html" class="link-menu">Meu perfil</a>
+              <a href="perdidos.html" class="link-menu">Meus pets</a>
+              <a href="admin.html" class="link-menu">Painel Admin</a>
+              <a href="configuracoes.html" class="link-menu">Configurações</a>
+            </div>
+            <div class="secao-menu secao-menu--topo">
+              <button type="button" id="logout-button" class="link-menu link-menu--perigo link-menu--completo">Sair</button>
+            </div>
+          </div>
+        </div>
+
+        <button data-toggle-mobile class="botao-menu-mobile">
+          <i data-lucide="menu" class="icone-sm"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="nav-mobile hidden">
+      <a href="index.html" data-nav="inicio" class="link-nav-mobile">Início</a>
+      <a href="perdidos.html" data-nav="perdidos" class="link-nav-mobile">Perdidos</a>
+      <a href="encontrados.html" data-nav="encontrados" class="link-nav-mobile">Encontrados</a>
+      <a href="recompensas.html" data-nav="recompensas" class="link-nav-mobile">Recompensas</a>
+      <a href="sobre.html" data-nav="sobre" class="link-nav-mobile">Sobre</a>
+      <a href="contato.html" data-nav="contato" class="link-nav-mobile">Contato</a>
+    </div>
+  </div>
+</nav>
+
+  <main>
+    
+<div class="min-h-screen bg-background">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <a href="javascript:history.back()" class="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6"><i data-lucide="arrow-left" class="icone-sm"></i> Voltar</a>
+    <div class="bg-card rounded-2xl border border-border p-6 md:p-8">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+        <div>
+          <h1 class="text-2xl md:text-3xl font-bold text-foreground">Nova publicação</h1>
+          <p class="text-muted-foreground mt-2">Preencha as informações do animal e do contato responsável.</p>
+        </div>
+        <div class="bg-secondary rounded-full p-1 inline-flex">
+          <button id="btn-lost" type="button" class="px-4 py-2 rounded-full text-sm font-medium bg-primary text-primary-foreground">Perdido</button>
+          <button id="btn-found" type="button" class="px-4 py-2 rounded-full text-sm font-medium text-foreground">Encontrado</button>
+        </div>
+      </div>
+      <form id="new-post-form" class="space-y-8">
+        <input type="hidden" name="type" id="post-type" value="lost">
+        <section>
+          <h2 class="text-lg font-bold text-foreground mb-4">Informações do pet</h2>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div><label class="texto-rotulo">Nome do pet</label><input name="name" required placeholder="Ex: Thor" class="entrada-padrao"></div>
+            <div><label class="texto-rotulo">Espécie</label><select name="species" class="entrada-padrao"><option value="dog">Cachorro</option><option value="cat">Gato</option><option value="other">Outro</option></select></div>
+            <div><label class="texto-rotulo">Raça</label><input name="breed" placeholder="Ex: Golden Retriever" class="entrada-padrao"></div>
+            <div><label class="texto-rotulo">Cor</label><input name="color" placeholder="Ex: Dourado" class="entrada-padrao"></div>
+            <div><label class="texto-rotulo">Porte</label><select name="size" class="entrada-padrao"><option value="P">Pequeno</option><option value="M">Médio</option><option value="G">Grande</option></select></div>
+            <div><label class="texto-rotulo">Sexo</label><select name="gender" class="entrada-padrao"><option value="Macho">Macho</option><option value="Fêmea">Fêmea</option></select></div>
+            <div><label class="texto-rotulo">Cidade</label><input name="city" required placeholder="Ex: São Paulo" class="entrada-padrao"></div>
+            <div><label class="texto-rotulo">Estado</label><input name="state" required placeholder="Ex: SP" class="entrada-padrao"></div>
+            <div class="md:col-span-2"><label class="texto-rotulo">Bairro</label><input name="neighborhood" placeholder="Ex: Vila Mariana" class="entrada-padrao"></div>
+            <div class="md:col-span-2"><label class="texto-rotulo">Descrição</label><textarea name="description" rows="4" placeholder="Conte detalhes importantes para ajudar na identificação." class="w-full mt-1 px-4 py-2.5 rounded-lg border border-border bg-background text-sm resize-none"></textarea></div>
+            <div id="reward-wrap"><label class="texto-rotulo">Recompensa (opcional)</label><input name="reward" type="number" min="0" placeholder="Ex: 500" class="entrada-padrao"></div>
+            <div><label class="texto-rotulo">Foto / emoji</label><input name="photo" placeholder="Cole uma imagem base64 ou use 🐕 / 🐈" class="entrada-padrao"></div>
+          </div>
+        </section>
+        <section>
+          <h2 class="text-lg font-bold text-foreground mb-4">Contato responsável</h2>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div><label class="texto-rotulo">Nome</label><input name="contactName" required placeholder="Seu nome" class="entrada-padrao"></div>
+            <div><label class="texto-rotulo">Telefone</label><input name="contactPhone" required placeholder="(11) 99999-9999" class="entrada-padrao"></div>
+            <div class="md:col-span-2"><label class="texto-rotulo">E-mail</label><input name="contactEmail" type="email" placeholder="seu@email.com" class="entrada-padrao"></div>
+          </div>
+        </section>
+        <div class="flex flex-wrap gap-3">
+          <button class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"><i data-lucide="plus" class="icone-sm"></i> Publicar caso</button>
+          <a href="index.html" class="px-6 py-3 rounded-lg bg-secondary text-foreground font-semibold">Cancelar</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  </main>
+  
+<footer class="rodape-site rodape-site--espacado">
+  <div class="pagina">
+    <div class="rodape-grade">
+      <div>
+        <div class="rodape-marca">
+          <div class="marca-logo">
+            <span class="marca-logo__icone">🐾</span>
+          </div>
+          <span class="rodape-logo-texto">AuChei</span>
+        </div>
+        <p class="rodape-texto">Reunindo pets e famílias desde 2024. Cada animal merece voltar para casa.</p>
+      </div>
+      <div>
+        <h4 class="rodape-subtitulo">Plataforma</h4>
+        <ul class="rodape-lista">
+          <li><a href="perdidos.html" class="rodape-link">Perdidos</a></li>
+          <li><a href="encontrados.html" class="rodape-link">Encontrados</a></li>
+          <li><a href="recompensas.html" class="rodape-link">Recompensas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="rodape-subtitulo">Sobre</h4>
+        <ul class="rodape-lista">
+          <li><a href="sobre.html" class="rodape-link">Nossa história</a></li>
+          <li><a href="contato.html" class="rodape-link">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="rodape-subtitulo">Redes sociais</h4>
+        <div class="rodape-redes">
+          <a href="#" class="rodape-rede-link"><i data-lucide="instagram" class="icone-rodape"></i></a>
+          <a href="#" class="rodape-rede-link"><i data-lucide="facebook" class="icone-rodape"></i></a>
+          <a href="#" class="rodape-rede-link"><i data-lucide="twitter" class="icone-rodape"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="rodape-direitos">© 2024 AuChei. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+  <div id="toast-box" class="area-toast"></div>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

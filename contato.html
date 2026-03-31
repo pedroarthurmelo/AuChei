@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuChei - Contato</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="contato">
+  
+<nav class="cabecalho-site">
+  <div class="pagina">
+    <div class="header-row">
+      <a href="index.html" class="linha-info">
+        <div class="marca-logo">
+          <span class="marca-logo__icone">🐾</span>
+        </div>
+      </a>
+
+      <div class="nav-desktop">
+        <a href="index.html" data-nav="inicio" class="link-nav">Início</a>
+        <a href="perdidos.html" data-nav="perdidos" class="link-nav">Perdidos</a>
+        <a href="encontrados.html" data-nav="encontrados" class="link-nav">Encontrados</a>
+        <a href="recompensas.html" data-nav="recompensas" class="link-nav">Recompensas</a>
+        <a href="sobre.html" data-nav="sobre" class="link-nav">Sobre</a>
+        <a href="contato.html" data-nav="contato" class="link-nav">Contato</a>
+      </div>
+
+      <div class="acoes-cabecalho">
+        <div class="grupo-menu">
+          <button data-toggle="search" class="botao-icone">
+            <i data-lucide="search" class="icone-sm"></i>
+          </button>
+          <div data-menu="search" class="painel-menu painel-menu--busca hidden">
+            <form id="nav-search-form">
+              <div class="relative">
+                <i data-lucide="search" class="icone-campo"></i>
+                <input id="nav-search-input" type="text" placeholder="Buscar pets, raças, cidades..." class="campo-busca">
+              </div>
+              <div class="texto-ajuda">Pressione Enter para buscar em Perdidos</div>
+              <div class="links-rapidos">
+                <a href="perdidos.html" class="link-rapido">Ver todos os perdidos</a>
+                <a href="encontrados.html" class="link-rapido">Ver todos os encontrados</a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <button id="theme-toggle" class="botao-icone" title="Alternar tema">
+          <i data-theme-icon data-lucide="moon" class="icone-sm"></i>
+        </button>
+
+        <div class="grupo-menu">
+          <button data-toggle="notif" class="botao-icone botao-icone--relativo">
+            <i data-lucide="bell" class="icone-sm"></i>
+            <span id="badge-notificacao" class="badge-notificacao"></span>
+          </button>
+          <div data-menu="notif" class="painel-menu painel-menu--lista hidden">
+            <div class="cabecalho-menu">
+              <h3 class="titulo-secao">Notificações</h3>
+              <button id="read-all" class="link-texto">Marcar todas como lidas</button>
+            </div>
+            <div id="notif-list" class="lista-rolavel"></div>
+          </div>
+        </div>
+
+        <div class="grupo-menu">
+          <button data-toggle="location" class="botao-icone" title="Localização">
+            <i data-lucide="map-pin" class="icone-sm"></i>
+          </button>
+          <div data-menu="location" class="painel-menu painel-menu--localizacao hidden">
+            <h3 class="titulo-secao titulo-secao--espacada">Sua localização</h3>
+            <div class="chip-localizacao">
+              <i data-lucide="map-pin" class="w-4 h-4 text-primary shrink-0"></i>
+              <span id="user-location">São Paulo, SP</span>
+            </div>
+            <input id="location-input" type="text" placeholder="Alterar cidade..." class="campo-texto">
+            <p class="text-xs text-muted-foreground mt-2">Pressione Enter para atualizar</p>
+          </div>
+        </div>
+
+        <div class="grupo-menu">
+          <button data-toggle="user" class="toggle-perfil" aria-label="Abrir menu do perfil" aria-expanded="false">
+            <div class="toggle-perfil__avatar">
+              <span id="user-avatar" class="text-sm">👤</span>
+            </div>
+            <i data-lucide="chevron-down" class="toggle-perfil__seta"></i>
+          </button>
+          <div data-menu="user" class="painel-menu painel-menu--usuario hidden">
+            <div class="secao-menu secao-menu--borda">
+              <p id="user-name" class="titulo-secao">Maria Silva</p>
+              <p id="user-email" class="nota-suave">maria@email.com</p>
+            </div>
+            <div class="lista-menu">
+              <a href="perfil.html" class="link-menu">Meu perfil</a>
+              <a href="perdidos.html" class="link-menu">Meus pets</a>
+              <a href="admin.html" class="link-menu">Painel Admin</a>
+              <a href="configuracoes.html" class="link-menu">Configurações</a>
+            </div>
+            <div class="secao-menu secao-menu--topo">
+              <button type="button" id="logout-button" class="link-menu link-menu--perigo link-menu--completo">Sair</button>
+            </div>
+          </div>
+        </div>
+
+        <button data-toggle-mobile class="botao-menu-mobile">
+          <i data-lucide="menu" class="icone-sm"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="nav-mobile hidden">
+      <a href="index.html" data-nav="inicio" class="link-nav-mobile">Início</a>
+      <a href="perdidos.html" data-nav="perdidos" class="link-nav-mobile">Perdidos</a>
+      <a href="encontrados.html" data-nav="encontrados" class="link-nav-mobile">Encontrados</a>
+      <a href="recompensas.html" data-nav="recompensas" class="link-nav-mobile">Recompensas</a>
+      <a href="sobre.html" data-nav="sobre" class="link-nav-mobile">Sobre</a>
+      <a href="contato.html" data-nav="contato" class="link-nav-mobile">Contato</a>
+    </div>
+  </div>
+</nav>
+
+  <main>
+    
+<div class="pagina-inteira">
+  <section class="py-16 text-center">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary text-foreground text-sm font-medium mb-6">💬 Fale com a gente</div>
+      <h1 class="text-4xl md:text-5xl font-bold text-foreground">Estamos aqui para ajudar</h1>
+      <p class="mt-4 text-muted-foreground text-lg">Dúvidas, sugestões, suporte ou parcerias. Envie uma mensagem e retornaremos em breve.</p>
+    </div>
+  </section>
+  <section class="pb-10">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div class="bg-card rounded-2xl border border-border p-5 flex items-center gap-3"><div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center"><i data-lucide="mail" class="w-5 h-5"></i></div><div><div class="text-xs text-muted-foreground font-semibold">E-MAIL</div><div class="texto-rotulo">contato@auchei.com.br</div></div></div>
+      <div class="bg-card rounded-2xl border border-border p-5 flex items-center gap-3"><div class="w-12 h-12 rounded-full bg-success/10 text-success flex items-center justify-center"><i data-lucide="phone" class="w-5 h-5"></i></div><div><div class="text-xs text-muted-foreground font-semibold">WHATSAPP</div><div class="texto-rotulo">(11) 99999-0000</div></div></div>
+      <div class="bg-card rounded-2xl border border-border p-5 flex items-center gap-3"><div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center"><i data-lucide="clock-3" class="w-5 h-5"></i></div><div><div class="text-xs text-muted-foreground font-semibold">HORÁRIO</div><div class="texto-rotulo">Seg–Sex, 9h às 18h</div></div></div>
+      <div class="bg-card rounded-2xl border border-border p-5 flex items-center gap-3"><div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center"><i data-lucide="map-pin" class="w-5 h-5"></i></div><div><div class="text-xs text-muted-foreground font-semibold">LOCALIZAÇÃO</div><div class="texto-rotulo">São Paulo, SP — Brasil</div></div></div>
+    </div>
+  </section>
+  <section class="secao secao--final">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-[1.1fr_.9fr] gap-8">
+      <div class="bg-card rounded-2xl border border-border p-6 md:p-8">
+        <h2 class="cartao-info__titulo">Enviar mensagem</h2>
+        <p class="text-sm text-muted-foreground mt-1 mb-6">Preencha o formulário abaixo.</p>
+        <form id="contact-form" class="space-y-4">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div><label class="texto-rotulo">Nome</label><input required name="name" placeholder="Seu nome" class="entrada-padrao"></div>
+            <div><label class="texto-rotulo">E-mail</label><input required name="email" type="email" placeholder="seu@email.com" class="entrada-padrao"></div>
+          </div>
+          <div><label class="texto-rotulo">Assunto</label><select name="subject" class="entrada-padrao"><option>Dúvida geral</option><option>Problema técnico</option><option>Denúncia</option><option>Sugestão</option><option>Parcerias</option><option>Outros</option></select></div>
+          <div><label class="texto-rotulo">Mensagem</label><textarea required name="message" rows="6" placeholder="Escreva sua mensagem..." class="w-full mt-1 px-4 py-2.5 rounded-lg border border-border bg-background text-sm resize-none"></textarea></div>
+          <button class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"><i data-lucide="send" class="icone-sm"></i> Enviar mensagem</button>
+        </form>
+      </div>
+      <div class="bg-card rounded-2xl border border-border p-6 md:p-8">
+        <h2 class="text-xl font-bold text-foreground mb-4">Perguntas frequentes</h2>
+        <div class="space-y-3">
+          <details class="rounded-xl border border-border p-4"><summary class="font-medium text-foreground cursor-pointer">Como publicar um pet perdido?</summary><p class="text-sm text-muted-foreground mt-2">Acesse a página “Novo”, escolha o tipo “Perdido” e preencha os dados do animal e do tutor.</p></details>
+          <details class="rounded-xl border border-border p-4"><summary class="font-medium text-foreground cursor-pointer">Posso publicar um pet encontrado?</summary><p class="text-sm text-muted-foreground mt-2">Sim. Na mesma página você pode alternar para “Encontrado” e publicar os dados.</p></details>
+          <details class="rounded-xl border border-border p-4"><summary class="font-medium text-foreground cursor-pointer">Como funciona a recompensa?</summary><p class="text-sm text-muted-foreground mt-2">Ela é definida pelo tutor e exibida no anúncio. O combinado acontece diretamente entre as partes.</p></details>
+          <details class="rounded-xl border border-border p-4"><summary class="font-medium text-foreground cursor-pointer">Meu pet foi encontrado. E agora?</summary><p class="text-sm text-muted-foreground mt-2">Acesse seu perfil ou painel administrativo e atualize o status do caso para reunido.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+  </main>
+  
+<footer class="rodape-site rodape-site--espacado">
+  <div class="pagina">
+    <div class="rodape-grade">
+      <div>
+        <div class="rodape-marca">
+          <div class="marca-logo">
+            <span class="marca-logo__icone">🐾</span>
+          </div>
+          <span class="rodape-logo-texto">AuChei</span>
+        </div>
+        <p class="rodape-texto">Reunindo pets e famílias desde 2024. Cada animal merece voltar para casa.</p>
+      </div>
+      <div>
+        <h4 class="rodape-subtitulo">Plataforma</h4>
+        <ul class="rodape-lista">
+          <li><a href="perdidos.html" class="rodape-link">Perdidos</a></li>
+          <li><a href="encontrados.html" class="rodape-link">Encontrados</a></li>
+          <li><a href="recompensas.html" class="rodape-link">Recompensas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="rodape-subtitulo">Sobre</h4>
+        <ul class="rodape-lista">
+          <li><a href="sobre.html" class="rodape-link">Nossa história</a></li>
+          <li><a href="contato.html" class="rodape-link">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="rodape-subtitulo">Redes sociais</h4>
+        <div class="rodape-redes">
+          <a href="#" class="rodape-rede-link"><i data-lucide="instagram" class="icone-rodape"></i></a>
+          <a href="#" class="rodape-rede-link"><i data-lucide="facebook" class="icone-rodape"></i></a>
+          <a href="#" class="rodape-rede-link"><i data-lucide="twitter" class="icone-rodape"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="rodape-direitos">© 2024 AuChei. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+  <div id="toast-box" class="area-toast"></div>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
