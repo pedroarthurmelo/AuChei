@@ -100,11 +100,30 @@
             <p class="auth-topo__texto">Use sua conta para acessar seu perfil, suas configurações e suas publicações.</p>
           </div>
         </div>
-        <div class="auth-aviso"><strong>Demonstração pronta:</strong> você pode entrar com <strong>maria@email.com</strong> e senha <strong>123456</strong>.</div>
+        <div class="auth-aviso"><strong>Login real:</strong> informe seu e-mail e sua senha para autenticar pelo backend e acessar sua conta.</div>
         <form id="login-form" class="auth-form" autocomplete="on">
-          <label class="auth-campo"><span class="auth-rotulo">E-mail</span><input class="auth-entrada" type="email" name="email" placeholder="seuemail@exemplo.com" required></label>
-          <label class="auth-campo"><span class="auth-rotulo">Senha</span><input class="auth-entrada" type="password" name="password" placeholder="Digite sua senha" required></label>
-          <div class="auth-linha"><label class="text-sm text-muted-foreground"><input type="checkbox" checked> Lembrar neste navegador</label><a href="registro.html" class="auth-link">Criar conta</a></div>
+          <label class="auth-campo">
+            <span class="auth-rotulo">E-mail</span>
+            <input class="auth-entrada" type="email" name="email" placeholder="seuemail@exemplo.com" required>
+          </label>
+
+          <label class="auth-campo">
+            <span class="auth-rotulo">Senha</span>
+            <input class="auth-entrada" type="password" name="password" placeholder="Digite sua senha" required>
+          </label>
+
+          <div class="auth-linha">
+            <label class="text-sm text-muted-foreground">
+              <input type="checkbox" checked> Lembrar neste navegador
+            </label>
+            <a href="registro.html" class="auth-link">Criar conta</a>
+          </div>
+
+          <div class="auth-linha">
+            <span></span>
+            <a href="recuperar_senha.html" class="auth-link">Esqueci minha senha</a>
+          </div>
+
           <button type="submit" class="auth-botao">Entrar agora</button>
         </form>
       </section>
@@ -120,7 +139,7 @@
         <p class="rodape-texto">Reunindo pets e famílias desde 2024. Cada animal merece voltar para casa.</p>
       </div>
       <div><h4 class="rodape-subtitulo">Plataforma</h4><ul class="rodape-lista"><li><a href="perdidos.html" class="rodape-link">Perdidos</a></li><li><a href="encontrados.html" class="rodape-link">Encontrados</a></li><li><a href="recompensas.html" class="rodape-link">Recompensas</a></li></ul></div>
-      <div><h4 class="rodape-subtitulo">Conta</h4><ul class="rodape-lista"><li><a href="login.html" class="rodape-link">Entrar</a></li><li><a href="registro.html" class="rodape-link">Criar conta</a></li><li><a href="configuracoes.html" class="rodape-link">Configurações</a></li></ul></div>
+      <div><h4 class="rodape-subtitulo">Conta</h4><ul class="rodape-lista"><li><a href="login.html" class="rodape-link">Entrar</a></li><li><a href="registro.html" class="rodape-link">Criar conta</a></li><li><a href="recuperar_senha.html" class="rodape-link">Recuperar senha</a></li></ul></div>
       <div><h4 class="rodape-subtitulo">Redes sociais</h4><div class="rodape-redes"><a href="#" class="rodape-rede-link"><i data-lucide="instagram" class="icone-rodape"></i></a><a href="#" class="rodape-rede-link"><i data-lucide="facebook" class="icone-rodape"></i></a><a href="#" class="rodape-rede-link"><i data-lucide="twitter" class="icone-rodape"></i></a></div></div>
     </div>
     <div class="rodape-direitos">© 2026 AuChei. Feito para ajudar pets a voltarem para casa.</div>
@@ -128,6 +147,14 @@
 </footer>
 <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 <script src="assets/js/data.js"></script>
-<script src="assets/js/app.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/pets.js"></script>
+<script src="assets/js/profile.js"></script>
+<script src="assets/js/settings.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/admin.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
