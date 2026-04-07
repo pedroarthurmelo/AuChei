@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redefinir senha - AuChei</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <main class="min-h-screen flex items-center justify-center bg-background px-4">
+    <div class="w-full max-w-md bg-card border border-border rounded-2xl p-6">
+      <h1 class="text-2xl font-bold text-foreground mb-2">Redefinir senha</h1>
+      <p class="text-sm text-muted-foreground mb-6">
+        Digite sua nova senha.
+      </p>
+
+      <form id="reset-form" class="space-y-4">
+        <input
+          type="password"
+          name="password"
+          placeholder="Nova senha"
+          class="w-full px-3 py-2 rounded-lg border border-border bg-background text-sm"
+          required
+        >
+
+        <input
+          type="password"
+          name="confirmPassword"
+          placeholder="Confirmar nova senha"
+          class="w-full px-3 py-2 rounded-lg border border-border bg-background text-sm"
+          required
+        >
+
+        <button
+          type="submit"
+          class="w-full px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium"
+        >
+          Redefinir senha
+        </button>
+      </form>
+
+      <p class="text-sm text-center mt-4">
+        <a href="login.html" class="text-primary hover:underline">Voltar ao login</a>
+      </p>
+    </div>
+  </main>
+
+  <div id="toast-box" class="area-toast"></div>
+
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script>
+    (function () {
+      const form = document.getElementById('reset-form');
+      const { toast } = window.AuCheiUtils;
+      const { requestJson, buildApiUrl } = window.AuCheiApi;
+
+      function getToken() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('token') || '';
+      }
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const token = getToken();
+        const password = form.elements.password.value;
+        const confirmPassword = form.elements.confirmPassword.value;
+
+        if (!token) {
+          toast('Token de recuperação não informado.', 'error');
+          return;
+        }
+
+        if (!password || !confirmPassword) {
+          toast('Preencha os campos obrigatórios.', 'error');
+          return;
+        }
+
+        if (password !== confirmPassword) {
+          toast('As senhas não coincidem.', 'error');
+          return;
+        }
+
+        const regexSenhaForte = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
+        if (!regexSenhaForte.test(password)) {
+          toast('A senha deve ter 8+ caracteres, maiúscula, minúscula, número e caractere especial.', 'error');
+          return;
+        }
+
+        const botao = form.querySelector('button[type="submit"]');
+        const textoOriginal = botao.textContent;
+
+        botao.disabled = true;
+        botao.textContent = 'Salvando...';
+
+        try {
+          const resposta = await requestJson(buildApiUrl('redefinir_senha.php'), {
+            method: 'POST',
+            body: JSON.stringify({ token, password, confirmPassword })
+          });
+
+          toast(resposta.mensagem || 'Senha redefinida com sucesso!');
+          setTimeout(() => {
+            window.location.href = 'login.html';
+          }, 1000);
+        } catch (error) {
+          toast(error.message || 'Não foi possível redefinir a senha.', 'error');
+        } finally {
+          botao.disabled = false;
+          botao.textContent = textoOriginal;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
